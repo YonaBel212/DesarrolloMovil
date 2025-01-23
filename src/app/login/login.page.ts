@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -11,7 +12,7 @@ export class LoginPage implements OnInit {
   email: string = '';
   password:string = '';
 
-  constructor() {
+  constructor(private navController: NavController ) {
     
    }
 
@@ -39,7 +40,7 @@ export class LoginPage implements OnInit {
     //Entonces console.log('Login correcto')
     //i no console.log('Login incorrescto')
     if(this.email === 'admin' && this.password === 'admin'){
-      console.log('login correcto');
+      this.navController.navigateForward('/inicio');
     }
     else{
       console.log('login incorrecto');
