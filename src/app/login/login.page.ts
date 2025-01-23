@@ -8,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  email: string = '';
+  password:string = '';
+
+  constructor() {
+    
+   }
 
   ngOnInit() {
+  }
+
+  login(){
+    //si usuario=admin y password=admin
+    //Entonces console.log('Login correcto')
+    //i no console.log('Login incorrescto')
+    if(this.email === 'admin' && this.password === 'admin'){
+      console.log('login correcto');
+    }
+    else{
+      console.log('login incorrecto');
+    }
+
   }
 
 }
